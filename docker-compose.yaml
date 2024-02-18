@@ -1,8 +1,8 @@
 version: '3'
 services:
   my-app:
-    # build: .
-    image: docker-hub-user/image-name:image-tag
+    #build: .   #this is convinient for  local testing but in actual working enviroonment we just do that by pushing our own image to docker hub and replace it here
+    image: docker-hub-user/image-name:image-tag   #this is how we use in final prod level , we fetch the image we build 
     ports:
      - 3000:3000
     environment:
@@ -25,4 +25,4 @@ services:
      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ADMIN_PASS}
      - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
-     - "mongodb"
+      - "mongodb"
